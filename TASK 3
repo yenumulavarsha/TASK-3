@@ -1,0 +1,21 @@
+import random
+import string
+def PasswordGnerator(password_length):
+    lowercase_alphabet = string.ascii_lowercase
+    uppercase_alphabet = string.ascii_uppercase
+    numbers=range(0, 10)
+    character=("@", "#", "_")
+    options=(lowercase_alphabet,uppercase_alphabet,numbers,character)
+    i=1
+    password = ""
+    while(i <= password_length):
+        options_choice = random.choice(options)
+        character_choice = random.choice(options_choice)
+        password = password + str(character_choice)
+        i += 1
+    print(password)
+
+
+print("It is recommended to get a very strong password min 12 charecters are required.")
+password_length= int(input("enter the length of the password requried:"))
+PasswordGnerator(password_length)   
